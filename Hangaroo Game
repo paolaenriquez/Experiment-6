@@ -1,0 +1,84 @@
+import random
+
+wordList = ["mango","rizal","cotton","lomi","durian","carabao","manila","palawan","pampanga","quezon"]
+
+secretWord = random.choice(wordList)
+
+nl = len(secretWord)
+letterGuessed = []
+a1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+guessWord = []
+
+print("\n")
+print ("Welcome to Hangaroo!")
+print("\n")
+
+
+def word():
+    for string in secretWord: guessWord.append("_")
+    print ("The word has",nl,"letters","\n",'_ ' * nl)
+    print ("\n","You have a maximum of 3 mistakes!")
+    print ("\n","Reminder: ONE LETTER at a time.","\n","Use Lower Case Letters.")
+    print("\n","Hint!","\n") 
+    
+    if secretWord == "mango":
+        print("Most known fruit in Cebu")
+    elif secretWord == "rizal":
+        print("Convicted of sedition and convicted on December 30, 1896")
+    elif secretWord == "cotton":
+        print("Abundantly growing in Bulacan")
+    elif secretWord == "lomi":
+        print("Known food in Batangas")
+    elif secretWord == "durian":
+        print("Famous fruit in Davao")
+    elif secretWord == "carabao":
+        print("Philippines National animal")
+    elif secretWord == "manila":
+        print("Capital of the Philippines")
+    elif secretWord == "palawan":
+        print("Named to be best island in the world")
+    elif secretWord == "pampanga":
+        print("The location of the one of largest volcanic eruption")
+    else:
+        print("First President of the Philippines")
+
+def hangaroo():
+    turns = 0
+    
+    while turns < 3:
+        
+        print ("\n","Available Letters \n"," ", ' '.join(a1))
+        guess = input("Enter a Letter: ")
+        
+        if guess not in a1:
+            print ("Please Enter a Letter...")
+            turns +=1
+            print("Number of Mistakes: ", turns)
+        elif guess in letterGuessed:
+            print("The letter was already entered!")
+        else:
+            letterGuessed.append(guess)
+            if guess in secretWord:
+                print ("Keep it up, you're AMAZING!")
+                for x in range(0, nl):
+                    if secretWord[x] == guess:
+                        guessWord[x] = guess
+                        print(' '.join(guessWord))
+                a1.remove(guess)
+            else:
+                print("WRONG!!")
+                a1.remove(guess)
+                turns += 1
+                print("Number of Mistakes: ", turns)
+                if turns == 3:
+                    print("GAME OVER")
+                    print("The word is: ", secretWord)
+                    break
+            
+        if '_' not in guessWord:
+                        print("CONGRATULATIONS YOUR GUESSED THE WORD CORRECTLY!")
+                        break  
+        print("Guessed Letters: ",guess)
+        
+word()
+hangaroo()
