@@ -1,7 +1,7 @@
 import random
 import time
 
-wordList = ["Mango","Rizal","Cotton","Lomi","Durian","Carabao","Manila","Palawan","Pampanga","Quezon"]
+wordList = ["mango","rizal","cotton","lomi","durian","eagle","manila","palawan","pampanga","quezon"]
 
 secretWord = random.choice(wordList)
 
@@ -12,55 +12,50 @@ guessWord = []
 
 print("\n")
 print ("Welcome to Hangaroo!")
+time.sleep(2.5)
 print("\n")
-
-time.sleep(3)
 
 def word():
     for string in secretWord: guessWord.append("_")
-    print ("The word has",nl,"letters: ",'_ ' * nl,"\n")
-    time.sleep(3)
-    print ("You have a maximum of 5 mistakes!","\n")
-    time.sleep(3)
-    print ("Reminder: ONE LETTER at a time.")
-    time.sleep(3)
-    print("Hint!","\n") 
-    time.sleep(3)
+    print ("The word has",'_ ' * nl,"letters.")
+    time.sleep(2.5)
+    print ("You have a maximum of 3 mistakes!")
+    time.sleep(2.5)
+    print ("Reminder: ONE LETTER at a time")
+    time.sleep(2.5)
+    print("Hint!") 
     
-    if secretWord == "Mango":
+    if secretWord == "mango":
         print("Most known fruit in Cebu")
-    elif secretWord == "Rizal":
+    elif secretWord == "rizal":
         print("Convicted of sedition and convicted on December 30, 1896")
-    elif secretWord == "Cotton":
+    elif secretWord == "cotton":
         print("Abundantly growing in Bulacan")
-    elif secretWord == "Lomi":
+    elif secretWord == "lomi":
         print("Known food in Batangas")
-    elif secretWord == "Durian":
+    elif secretWord == "durian":
         print("Famous fruit in Davao")
-    elif secretWord == "Carabao":
-        print("Philippines National animal")
-    elif secretWord == "Manila":
+    elif secretWord == "eagle":
+        print("Manila")
+    elif secretWord == "manila":
         print("Capital of the Philippines")
-    elif secretWord == "Palawan":
+    elif secretWord == "palawan":
         print("Named to be best island in the world")
-    elif secretWord == "Pampanga":
+    elif secretWord == "pampanga":
         print("The location of the one of largest volcanic eruption")
     else:
         print("First President of the Philippines")
-        
-    time.sleep(3)
 
 def hangaroo():
     turns = 0
     
-    while turns < 5:
-        
-        print ("\n","Available Letters \n"," ", ' '.join(a1))
+    while turns < 3:
+        print (" ", ' '.join(a1))
         guess = input("Enter a Letter: ")
         guess = guess.lower()
         
         if guess not in a1:
-            print ("Please Enter a Letter...")
+            print ("LETTERS ONLY!")
             turns +=1
             print("Number of Mistakes: ", turns)
         elif guess in letterGuessed:
@@ -68,7 +63,7 @@ def hangaroo():
         else:
             letterGuessed.append(guess)
             if guess in secretWord:
-                print ("Keep it up, you're AMAZING!")
+                print ("Keep it up, you're AMAZING")
                 for x in range(0, nl):
                     if secretWord[x] == guess:
                         guessWord[x] = guess
@@ -76,18 +71,16 @@ def hangaroo():
                 a1.remove(guess)
             else:
                 print("WRONG!!")
-                a1.remove(guess)
+                ai.remove(guess)
                 turns += 1
                 print("Number of Mistakes: ", turns)
-                if turns == 5:
+                if turns == 3:
                     print("GAME OVER")
                     print("The word is: ", secretWord)
                     break
-            
         if '_' not in guessWord:
                         print("CONGRATULATIONS YOU GUESSED THE WORD CORRECTLY!")
-                        break  
-                    
+                        break    
         print("Guessed Letters: ",letterGuessed)
 word()
 hangaroo()
