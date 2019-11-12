@@ -1,0 +1,16 @@
+secretWord = input("Enter a Word: ")
+nl = len(secretWord)
+lettersGuessed = input("Enter a List of Letters: ")
+
+def isWordGuessed(secretWord, lettersGuessed):
+
+    count = 0
+    for i, j in enumerate(secretWord):
+    	if j in lettersGuessed:
+    		count += 1
+    if count == nl:
+    	return True
+    else:
+    	return False
+            
+print(isWordGuessed(secretWord, lettersGuessed))
