@@ -42,7 +42,7 @@ def word():
     elif secretWord == "Palawan":
         print("Named to be best island in the world")
     elif secretWord == "Pampanga":
-        print("The location of the one of largest volcanic eruption")
+        print("It is where one of the largest volcanic eruption occur")
     else:
         print("First President of the Philippines")
 
@@ -71,7 +71,7 @@ def hangaroo():
                 a1.remove(guess)
             else:
                 print("WRONG!!")
-                ai.remove(guess)
+                a1.remove(guess)
                 turns += 1
                 print("Number of Mistakes: ", turns)
                 if turns == 3:
