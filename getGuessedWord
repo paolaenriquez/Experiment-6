@@ -1,0 +1,37 @@
+secretWord = input("Enter a Word: ")
+nl = len(secretWord)
+lettersGuessed = []
+a1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+guessWord = []
+
+
+
+def getGuessedWord(secretWord,lettersGuessed):
+    for string in secretWord: guessWord.append("_")
+    
+    print ("The word you have to guess has", nl, "characters")
+    print (' '.join(guessWord))
+    
+    turns = 0
+    
+    while turns < 5:
+        guess = input("Enter a Letter: ")
+        
+        if guess not in a1:
+            print ("LETERS ONLY!")
+        elif guess in lettersGuessed:
+            print("The letter was already entered!")
+        else:
+            lettersGuessed.append(guess)
+            if guess in secretWord:
+                print ("Keep it up, you're AMAZING!")
+                for x in range(0, nl):
+                    if secretWord[x] == guess:
+                        guessWord[x] = guess
+                        print(' '.join(guessWord))
+            
+        if '_' not in guessWord:
+                        print("CONGRATULATIONS YOU GUESSED THE WORD CORRECTLY!")
+                        break  
+        
+print(getGuessedWord(secretWord,lettersGuessed))  
