@@ -1,0 +1,25 @@
+lettersGuessed = []
+a1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+letters = []    
+    
+def getAvailableLetters(lettersGuessed):
+    
+    let = 0
+    
+    while let == 0:
+        lettersGuessed = input("Please type a letter: \n")
+        lettersGuessed = lettersGuessed.lower()
+        
+        letters.extend(lettersGuessed)
+    
+        if lettersGuessed in secretWord:
+            a1.remove(lettersGuessed)
+        else:
+            a1.remove(lettersGuessed)
+            
+        return
+    
+        
+print(getAvailableLetters(lettersGuessed))
+print ("These are the available letters: \n")
+print (''.join(a1))
