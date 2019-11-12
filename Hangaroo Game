@@ -1,7 +1,7 @@
 import random
 import time
 
-wordList = ["Mango","Rizal","Cotton","Lomi","Durian","Carabao","Manila","Palawan","Pampanga","Quezon"]
+wordList = ["mango","rizal","cotton","lomi","durian","carabao","manila","palawan","pampanga","quezon"]
 
 secretWord = random.choice(wordList)
 
@@ -25,23 +25,23 @@ def word():
     time.sleep(2.5)
     print("Hint!") 
     
-    if secretWord == "Mango":
+    if secretWord == "mango":
         print("Most known fruit in Cebu")
-    elif secretWord == "Rizal":
+    elif secretWord == "rizal":
         print("Convicted of sedition and convicted on December 30, 1896")
-    elif secretWord == "Cotton":
+    elif secretWord == "cotton":
         print("Abundantly growing in Bulacan")
-    elif secretWord == "Lomi":
+    elif secretWord == "lomi":
         print("Known food in Batangas")
-    elif secretWord == "Durian":
+    elif secretWord == "durian":
         print("Famous fruit in Davao")
-    elif secretWord == "Carabao":
+    elif secretWord == "carabao":
         print("National Animal of the Philippines")
-    elif secretWord == "Manila":
+    elif secretWord == "manila":
         print("Capital of the Philippines")
-    elif secretWord == "Palawan":
+    elif secretWord == "palawan":
         print("Named to be best island in the world")
-    elif secretWord == "Pampanga":
+    elif secretWord == "pampanga":
         print("It is where one of the largest volcanic eruption occur")
     else:
         print("First President of the Philippines")
